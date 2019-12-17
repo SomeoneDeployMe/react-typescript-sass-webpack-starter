@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <% for (key in htmlWebpackPlugin.files.css) { %>
+        <link rel="stylesheet" href="/styles/<%= htmlWebpackPlugin.files.css[key].split('/').reverse()[0] %>">
+    <% } %>
+</head>
+    <body class="app">
+        <div id="root"></div>
+    </body>
+    <% for (key in htmlWebpackPlugin.files.js) { %>
+        <script src="/js/<%= htmlWebpackPlugin.files.js[key].split('/').reverse()[0] %>"></script>
+    <% } %>
+</html>
